@@ -1,0 +1,74 @@
+body {
+    background-color: black;
+}
+
+.logintab {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 500PX;
+    width: 350px;
+    border-radius: 24px;
+    outline: 12px;
+    outline-color: black;
+    outline-style: auto;
+    background-color: rgb(58, 58, 185);
+}
+
+.email {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+        background-color: blue;
+}
+
+.password {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: blue;
+}
+
+.title {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.registrar {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.loginbutton {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    height: 55px;
+    width: 160px;
+    border-radius: 32px;
+    outline-color: black;
+    outline: 12px;
+    outline-style: auto;
+    transform: translate(-50%,-50%);
+    background-color: aqua;
+    font-size: 32px;
+}
+
+.loginbutton:hover {
+    height: 45px;
+    width: 150px;
+    font-size: 28px;
+}
+
+.loginbutton:active {
+    height: 35px;
+    width: 140px;
+    font-size: 24px;    
+}
