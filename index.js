@@ -1,30 +1,39 @@
-function registrar() {
-    const email = document.querySelector(".email").value;
-    const senha = document.querySelector(".password").value;
-
-    if (!email || !senha) {
-        alert("Preencha email e senha");
-        return;
-    }
-
-    // salva no navegador
-    localStorage.setItem("user_email", email);
-    localStorage.setItem("user_senha", senha);
-
-    alert("Registrado com sucesso!");
+function mostrarMsg(texto, ok=true) {
+    const m = document.getElementById("msg");
+    m.innerText = texto;
+    m.style.color = ok ? "green" : "red";
 }
 
-function login() {
+async function registrar() {
     const email = document.querySelector(".email").value;
     const senha = document.querySelector(".password").value;
 
-    const emailSalvo = localStorage.getItem("user_email");
-    const senhaSalva = localStorage.getItem("user_senha");
+    const r = await fetch("http://localhost:3000/registrar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, senha })
+    });
 
-    if (email === emailSalvo && senha === senhaSalva) {
-        alert("Login OK ✅");
-        window.location.href = "home.html"; // página depois do login
-    } else {
-        alert("Email ou senha incorretos ❌");
+    const t = await r.text();
+    mostrarMsg(t, r.ok);
+}
+
+async function login() {
+    const email = document.querySelector(".email").value;
+    const senha = document.querySelector(".password").value;
+
+    const r = await fetch("http://localhost:3000/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, senha })
+    });
+
+    const t = await r.text();
+    mostrarMsg(t, r.ok);
+
+    if (r.ok) {
+        setTimeout(() => {
+            window.location.href = "home.html";
+        }, 800);
     }
 }

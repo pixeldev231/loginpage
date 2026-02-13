@@ -1,18 +1,41 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>titulo da pagina</title>
-    </head>
-    <link rel="stylesheet" href="style.css">
-    <body>
-        <div class="logintab">
-            <input type="email" class="email">
-            <input type="password" class="password">
-            <button class="loginbutton" onclick="login()">LOGIN</button>
-            <h1 class="title">LOGIN</h1>
-            <p class="registrar" onclick="registrar()">clique aqui para registrar</p>
-        </div>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Título da Página</title>
 
-    <script src="index.js"></script>
-    </body>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="logintab">
+
+    <h1 class="title">LOGIN</h1>
+
+    <input type="email"
+            class="email"
+            placeholder="Email"
+            required>
+
+    <input type="password"
+            class="password"
+            placeholder="Senha"
+            required>
+
+    <button class="loginbutton" onclick="login()">
+        LOGIN
+    </button>
+
+    <div id="msg"></div>
+
+    <p class="registrar" onclick="registrar()">
+        Clique aqui para registrar
+    </p>
+
+</div>
+
+<script src="index.js"></script>
+
+</body>
 </html>
